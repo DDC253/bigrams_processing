@@ -49,6 +49,12 @@ for l in mega_list:
 bigrams_list =[]
 for el in lista_1:
    for i,j in zip(el[0],el[1]):
-            bigrams_list.append([i+j])
+            bigrams_list.append([i+' '+j])
 
-print(bigrams_list)
+
+
+textfile = open("de_cv_dev_bi.txt", "w")
+for element in bigrams_list:
+    for bi in element:
+        textfile.write(''.join(element) + "\n")
+textfile.close()
