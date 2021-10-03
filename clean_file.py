@@ -41,6 +41,6 @@ frasi = list_sentences(sentences)
 lista_1 = []
 for l in frasi:
     for i in range(len(frasi)-1): 
-            lista_1.append([[frasi[i]], [frasi[i+1]]])
+            lista_1.append([[i[i]], [i[i+1]]])
 
-print(lista_1)
+print(lista_1[1:3])
