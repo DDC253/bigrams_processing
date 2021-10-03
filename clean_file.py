@@ -29,18 +29,26 @@ def list_sentences(sentences):
     list = [[row] for row in rows]
     return list
 
+mega_list = []
 frasi = list_sentences(sentences)
+for el in frasi:
+    for el1 in el:
+        word = el1.split(' ')
+        mega_list.append(word)
+        
 
-#for l in frasi:
-  #  lista = list(row)
-
-#print(lista)
-
-
-#print(list_sentences(sentences))
+#print(mega_list)        
+    
 lista_1 = []
-for l in frasi:
-    for i in range(len(frasi)-1): 
-            lista_1.append([[i[i]], [i[i+1]]])
+for l in mega_list:
+    for i in range(len(l)-1): 
+           lista_1.append([[l[i]], [l[i+1]]])
 
-print(lista_1[1:3])
+#print(lista_1)
+
+bigrams_list =[]
+for el in lista_1:
+   for i,j in zip(el[0],el[1]):
+            bigrams_list.append([i+j])
+
+print(bigrams_list)
